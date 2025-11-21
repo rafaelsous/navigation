@@ -1,6 +1,6 @@
 import { View } from "react-native";
 
-import { BottomTabRoutesProps } from "@/routes/BottomTabRoutes";
+import { DrawerRoutesProps } from "@/routes/DrawerRoutes";
 
 import { Title } from "@/components/Title";
 import { Header } from "@/components/Header";
@@ -9,7 +9,7 @@ import { ButtonIcon } from "@/components/ButtonIcon";
 export function Product({
   navigation,
   route,
-}: Readonly<BottomTabRoutesProps<"product">>) {
+}: Readonly<DrawerRoutesProps<"product">>) {
   function handleNavigateGoBack() {
     navigation.goBack();
   }
