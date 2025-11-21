@@ -1,4 +1,5 @@
 import { View } from "react-native";
+import { useRoute } from "@react-navigation/native";
 
 import { StackRoutesProps } from "@/routes/StackRoutes";
 
@@ -6,10 +7,14 @@ import { Title } from "@/components/Title";
 import { Header } from "@/components/Header";
 import { ButtonIcon } from "@/components/ButtonIcon";
 
+type RouteParams = StackRoutesProps<"product">;
+
 export function Product({
   navigation,
   route,
 }: Readonly<StackRoutesProps<"product">>) {
+  const { params } = useRoute<RouteParams["route"]>();
+
   function handleNavigateGoBack() {
     navigation.goBack();
   }
@@ -32,7 +37,8 @@ export function Product({
         <Title style={{ fontSize: 24, textAlign: "center" }}>
           Product ID:{" "}
           <Title style={{ fontSize: 24, fontWeight: 700 }}>
-            {route.params?.id}
+            {/*route.params?.id*/}
+            {params?.id}
           </Title>
         </Title>
       )}
