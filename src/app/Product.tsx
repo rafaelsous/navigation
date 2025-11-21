@@ -1,15 +1,12 @@
 import { View } from "react-native";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { StackRoutesList } from "@/routes/StackRoutes";
+import { StackRoutesProps } from "@/routes/StackRoutes";
 
 import { Titlte } from "@/components/Title";
 import { Header } from "@/components/Header";
 import { ButtonIcon } from "@/components/ButtonIcon";
 
-type Props = NativeStackScreenProps<StackRoutesList, "product">;
-
-export function Product({ navigation }: Readonly<Props>) {
+export function Product({ navigation }: Readonly<StackRoutesProps<"product">>) {
   function handleNavigateGoBack() {
     navigation.goBack();
   }
