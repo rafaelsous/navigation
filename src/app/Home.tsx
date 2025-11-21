@@ -1,12 +1,12 @@
 import { View } from "react-native";
 
-import { StackRoutesProps } from "@/routes/StackRoutes";
+import { BottomTabRoutesProps } from "@/routes/BottomTabRoutes";
 
 import { Title } from "@/components/Title";
 import { Header } from "@/components/Header";
 import { ButtonIcon } from "@/components/ButtonIcon";
 
-export function Home({ navigation }: Readonly<StackRoutesProps<"home">>) {
+export function Home({ navigation }: Readonly<BottomTabRoutesProps<"home">>) {
   function handleNavigateToProduct() {
     navigation.navigate("product", {
       id: Math.random().toString(36).substring(2),
