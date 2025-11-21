@@ -2,11 +2,14 @@ import { View } from "react-native";
 
 import { StackRoutesProps } from "@/routes/StackRoutes";
 
-import { Titlte } from "@/components/Title";
+import { Title } from "@/components/Title";
 import { Header } from "@/components/Header";
 import { ButtonIcon } from "@/components/ButtonIcon";
 
-export function Product({ navigation }: Readonly<StackRoutesProps<"product">>) {
+export function Product({
+  navigation,
+  route,
+}: Readonly<StackRoutesProps<"product">>) {
   function handleNavigateGoBack() {
     navigation.goBack();
   }
@@ -22,8 +25,17 @@ export function Product({ navigation }: Readonly<StackRoutesProps<"product">>) {
     >
       <Header>
         <ButtonIcon name="arrow-circle-left" onPress={handleNavigateGoBack} />
-        <Titlte>Product</Titlte>
+        <Title>Product</Title>
       </Header>
+
+      {route.params && (
+        <Title style={{ fontSize: 24, textAlign: "center" }}>
+          Product ID:{" "}
+          <Title style={{ fontSize: 24, fontWeight: 700 }}>
+            {route.params?.id}
+          </Title>
+        </Title>
+      )}
     </View>
   );
 }

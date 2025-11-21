@@ -8,7 +8,11 @@ import { Product } from "@/app/Product";
 
 export type StackRoutesList = {
   home: undefined;
-  product: undefined;
+  product:
+    | undefined
+    | {
+        id: string;
+      };
 };
 
 export type StackRoutesProps<T extends keyof StackRoutesList> =
