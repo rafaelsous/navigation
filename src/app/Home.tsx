@@ -23,8 +23,9 @@ export function Home({ navigation }: Readonly<DrawerRoutesProps<"home">>) {
       }}
     >
       <Header>
-        <Title>Home</Title>
         <ButtonIcon name="add-circle" onPress={handleNavigateToProduct} />
+        <Title>Home</Title>
+        <ButtonIcon name="menu" onPress={() => navigation.toggleDrawer()} />
       </Header>
     </View>
   );
